@@ -4,6 +4,9 @@ namespace RamlRequestValidator;
 
 class NamedType
 {
+    public const TYPE_STRING = 'string';
+    public const TYPE_INTEGER = 'integer';
+
     /**
      * @var string
      */

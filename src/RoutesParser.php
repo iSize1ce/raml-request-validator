@@ -28,7 +28,7 @@ class RoutesParser
 
             $uri = $parentUri . $key;
 
-            if ($parentUri !== '') {
+            if ($parentUri !== null) {
                 $route = clone $this->routes[$parentUri];
             } else {
                 $route = new Route();
