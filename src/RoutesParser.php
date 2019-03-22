@@ -19,10 +19,10 @@ class RoutesParser
         return $this->routes;
     }
 
-    private function parse(array $array, string $parentUri = ''): void
+    private function parse(array $array, string $parentUri = null): void
     {
         foreach ($array as $key => $value) {
-            if ( ! is_array($value) || strpos($key, '/') !== 0) {
+            if (!\is_array($value) || strncmp($key, '/', 1) !== 0) {
                 continue;
             }
 
@@ -36,10 +36,10 @@ class RoutesParser
 
             $route->setUri($uri);
 
-            if (array_key_exists('headers', $value)) {
+            if (\array_key_exists('headers', $value)) {
                 foreach ($value['headers'] as $headerName => $header) {
                     $route->addHeader(
-                        new NamedType($headerName, is_string($header) ? $header : $header['type'])
+                        new NamedType($headerName, \is_string($header) ? $header : $header['type'])
                     );
                 }
             }

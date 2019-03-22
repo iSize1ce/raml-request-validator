@@ -57,7 +57,7 @@ class Route
     }
 
     /**
-     * @param  NamedType[] $headers
+     * @param NamedType[] $queryParameters
      */
     public function setQueryParameters(array $queryParameters): Route
     {
