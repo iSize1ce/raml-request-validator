@@ -1,0 +1,11 @@
+{
+  "autoload": {
+    "psr-4": {
+      "RamlRequestValidator\\": "src"
+    }
+  },
+  "require": {
+    "symfony/yaml": "^4.2",
+    "psr/http-message": "^1.0"
+  }
+}
